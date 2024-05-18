@@ -1,0 +1,13 @@
+Dzewo procesów podomnych powinno wyglądać tak:
+
+                            PARENT PROCESS
+                            /      |      \
+                           /       |       \
+                          /        |        \
+                  |Child0.1|   |Child0.2|    |Child0.3|
+                 /     \           |
+                /       \          |
+       |Child1.1|   |Child1.2|  |Child1.2|
+       /
+      /
+|Child2.1|

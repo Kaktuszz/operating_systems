@@ -1,0 +1,33 @@
+===========================================================================
+Autor: Bohdan Fedirko,                                   Kraków, 19.03.2024
+===========================================================================
+
+* Zawartość:
+============
+
+Katalog zadania 2 zawiera dwa programy w języku C:
+---------------------------------------------------------------------------
+
+I.   a.c - Program który za pomoca pętli for wywołuje trzy razy fork() i
+     program, za pomocą execlp(), ktory wypisuję UID, GID, PPID i PGID
+     razem z identyfikatorem, jaki proces jest potomny (CHILD) lub
+     macierzysty (PARENT) z odpowiednim numerem wywołania. W programie
+     jest wykorzystana funkcja "wait()" aby proces macierzysty zaczekał na
+     zakończenie wszystkich procesów potomnych.
+     Skompilowany program a.c przyjmuje argumentem nazwę programu ktory
+     będzie wyłowany za pomocą execlp().
+
+II.  pid_info.c - Program który wypisuje UID, GID, PPID i PGID
+
+---------------------------------------------------------------------------
+
+* Jak urochomić program:
+=========================
+
+     Aby urochomic program trzeba wpisać polecenie:
+---> make a ARG=[nazwa_programu]
+
+     Jeśli nie podać argument, to będzie wyłowany domyślny argument (pid_info)
+
+
+===========================================================================

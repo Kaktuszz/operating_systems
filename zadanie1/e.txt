@@ -1,0 +1,2 @@
+Przy n-krotnym wywołaniu funkcji fork powstanie 2^n procesów, bo za każdym razem,
+gdy funkcja fork jest wywoływana, tworzony jest nowy proces, który jest dokładną kopią procesu macierzystego.

@@ -1,0 +1,47 @@
+==============================================================================
+Autor: Bohdan Fedirko                                       Kraków, 05.05.2024
+==============================================================================
+
+* Zawartość:
+============
+
+Katalog zadania 6 zawiera 2 programy i biblioteke w języku C:
+------------------------------------------------------------------------------
+
+I.   sem_handlers.c - Biblioteka do obslugi dzialan na semaforach obsluguje:
+     - sem_t* create_sem(const char* semaphore, int val, int task)
+     - sem_t* open_sem(const char* semaphore)
+     - int val_of_sem(sem_t *sem_add, int *val) 
+     - int post_sem(sem_t *sem_add)
+     - int wait_sem(sem_t *sem_add)
+     - int close_sem(sem_t *sem_add) 
+     - int rem_sem(const char* semaphore)
+     
+	•const char* semaphore - nazwa semafora
+	•int val - wartosc w semaforze
+	•int task - 0 -> do wykorzystania w jednym programie. 
+	•           1 -> dla wielu procesow
+	•sem_t *sem_add -> adress semafora
+	•int *val -> wskaznik na wartosc do zapisania liczby w semaforze
+
+II.   a.c - program do tworzy semafory, procesy potomne, obsługuje błędy,
+	    otwiera/tworzy plik numer.txt i wpisuje do niego 0 a potem
+            sprawdza wartość końcową i do innych działań zgodnie z poleceniem
+	    zadania.
+
+III.  prog.c - program otwiera semafor, wczytuje wartość z numer.txt, dodaje 1
+      i po krótkim oczeniwaniu wpisuje tą wartość z powrotem w sekcji 
+      krytycznej
+
+------------------------------------------------------------------------------
+
+* Jak urochomić programy:
+=========================
+
+     Aby urochomic programy trzeba wpisać polecenie:
+---> make a A=[nazwa_programu] B=[liczba_procesow] C=[liczba_w_semaforze]
+
+     Jeśli nie podać argumenty, to będą wyłowane domyślne argumenty:
+     ./a prog 5 1
+
+==============================================================================

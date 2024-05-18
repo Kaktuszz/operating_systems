@@ -1,0 +1,53 @@
+===========================================================================
+Autor: Bohdan Fedirko,                                   Kraków, 29.04.2024
+===========================================================================
+
+* Zawartość:
+============
+
+Katalog zadania 5 zawiera 3 programy w języku C:
+---------------------------------------------------------------------------
+
+I.   a.c - Program przyjmuje jako argument plik wejściowy i wyjściowy.
+     Tworzy dwa procesy potomne z programem konsument, któty przyjmuje treść
+     pliku z bufora i zapisuje do pliku wyjściowego i czeka na następną porcję
+     bitów. Producent otwiera plik wejściowy, przesyła do potoku po kilka bitów
+     treść pliku i czeka do póki konsument wczyta tą treść.
+     Obydwa programy "śpią" losowy czas.
+     Ogólnie program tworzy potok i wysyła potok do odczytu i zapisu do
+     konsumenta i producenta.
+     Na końcu program usuwa plik potoku.
+     Także jest obsługa sygnału SIGINT która usuwa plik potoku przy Ctrl+C
+     Makefile na końcu sprawdza czy plik wejściowy taki sam jak wyjściowy.
+
+II.  prod.c - Program który przyjmuje argumenty - nazwa potoku, plik
+     wejściowy, plik wyjściowy, otwiera potok i plik wejściowy i zapisuje
+     po kilka ajtów dane z pliku wejściowego do potoku.
+
+III. kons.c - Program który przyjmuje argumenty - nazwa potoku, plik
+     wejściowy, plik wyjściowy, otwiera potok i plik wyjściowy i czeka na
+     dane w potoku, jeśli dane są, to zapisuje do pliku wyjściowego po
+     parę bajtów.
+
+Podpunkt b):
+
+     make b - kompiluje programy produjenta i konsumenta, tworzy potok za
+     za pomocą mkfifo i uruchamia producenta w odzielnym terminale (xterm)
+     i konsumenta w obecnym terminale. Po zakończeniu działania programów
+     potok zostaje usunięty i sprawdza czy plik wejściowy jest identyczny
+     do wyjściowego.
+
+---------------------------------------------------------------------------
+
+* Jak urochomić programy:
+=========================
+
+     Aby urochomic programy trzeba wpisać polecenie:
+---> make a A=[nazwa_potoku] B=[plik_wejściowy] C=[plik_wyjściowy]
+
+---> make b A=[nazwa_potoku] B=[plik_wejściowy] C=[plik_wyjściowy]
+
+     Jeśli nie podać argumenty, to będą wyłowane domyślne argumenty:
+     buf inp.txt out.txt
+
+==============================================================================

@@ -1,0 +1,47 @@
+===========================================================================
+Autor: Bohdan Fedirko,                                   Kraków, 07.03.2024
+===========================================================================
+
+* Zawartość:
+============
+
+Katalog zadania 1  zawiera cztery programy w języku C:
+---------------------------------------------------------------------------
+I.   a.c - Program wypisujący identyfikatory UID, GID, PID, PPID i PGID dla
+     danego procesu.
+ 
+II.  b.c - Program który wywołuję funkcję "fork()" trzy razy w pętli for i
+     wypisuję UID, GID, PPID i PGID razem z identyfikatorem, jaki proces 
+     jest potomny (CHILD) lub macierzysty (PARENT) z odpowiednim numerem 
+     wywołania. W programie jest wykorzystana funkcja "wait()" aby proces
+     macierzysty zaczekał na zakończenie wszystkich procesów potomnych
+
+III. c.c - Program który wywołuję funkcję "fork()" jak w programie b.c 
+     ale zamiast "wait()" użyta funkcja "sleep()" tak, aby procesy potomne
+     były adoptowane przez proces init lub systemd; (w moim przypadku init)
+
+IV.  d.c - Program taki sam jak b.c, tylko zamiast funkcji "wait()" użyto
+     funkcji "sleep()" tak, aby procesy pojawiały się grupowane od
+     najstarszego do najmłodszego, a proces macierzysty kończy się dopiero
+     po wszystkich procesach potomnych. Wyniki zapisywane w plik add.txt
+     Przykładowe dzewo jest zapisane w pliku d.txt
+
+V.   e.c - Program jak w b.c tylko dodana jest funkcja setpgit(pid, 0)
+     pid - id procesu, 0 - by proces potomny zostaw liderem wlasnej grupy
+     procesow. 
+     W e.txt jest odpowiedz na pytanie: 
+     "Ile procesow powstaje przy n-krotnym wywolaniu funkcji fork 
+     i dlaczego?"
+
+---------------------------------------------------------------------------
+
+* Jak urochomić programy:
+=========================
+
+     Aby urochomic kazdy program trzeba wpisac polecenie: 
+---> make [podpunkt_zadania], np. make a, make b itd.
+
+
+===========================================================================
+
+

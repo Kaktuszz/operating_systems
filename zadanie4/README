@@ -1,0 +1,33 @@
+===========================================================================
+Autor: Bohdan Fedirko,                                   Kraków, 23.04.2024
+===========================================================================
+
+* Zawartość:
+============
+
+Katalog zadania 4 zawiera jeden program w języku C:
+---------------------------------------------------------------------------
+
+I.   a.c - Program przyjmuje jako argument plik wejściowy i wyjściowy.
+     Tworzy proces potomny z funkcją konsument, któty przyjmuje treść pliku
+     z bufora i zapisuje do pliku wyjściowego i czeka na następną porcję 
+     bitów.
+     Producent otwiera plik wejściowy, przesyła do bufora po kilka bitów 
+     treść pliku i czeka do póki konsument wczyta tą treść. 
+     Obydwie funkcje "śpią" losowy czas.
+     Ogólnie program tworzy potok i wysyła potok do odczytu i zapisu do 
+     konsumenta i producenta.
+     Makefile na końcu sprawdza czy plik wejściowy taki sam jak wyjściowy.
+
+---------------------------------------------------------------------------
+
+* Jak urochomić programy:
+=========================
+
+     Aby urochomic programy trzeba wpisać polecenie: 
+---> make a A1=[plik_wejściowy] A2=[plik_wyjściowy]
+
+     Jeśli nie podać argumenty, to będą wyłowane domyślne argumenty:
+     inp.txt out.txt
+
+==============================================================================
